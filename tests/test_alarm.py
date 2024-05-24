@@ -16,3 +16,11 @@ class TestAlarm:
             alarm.check_pressure()
 
             assert alarm.is_alarm_on
+
+    def test_alarm_is_on_when_pressure_it_to_high(self):
+        alarm = Alarm()
+
+        with patch("tire_pressure.sensor.Sensor.pop_next_pressure_psi_value", return_value=22):
+            alarm.check_pressure()
+
+            assert alarm.is_alarm_on
