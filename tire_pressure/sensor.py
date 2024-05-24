@@ -1,7 +1,15 @@
 import random
+from abc import ABC, abstractmethod
 
 
-class TireSensor:
+class Sensor(ABC):
+
+    @abstractmethod
+    def pop_next_pressure_psi_value(self) -> float:
+        """Read the pressure value from the sensor."""
+
+
+class TireSensor(Sensor):
     # The reading of the pressure value from the sensor is simulated in this implementation.
     # Because the focus of the exercise is on the other class.
     _OFFSET = 16
