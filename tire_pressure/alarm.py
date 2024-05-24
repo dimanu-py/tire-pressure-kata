@@ -1,9 +1,9 @@
-from tire_pressure.sensor import TireSensor
+from tire_pressure.sensor import Sensor
 
 
 class Alarm:
 
-    def __init__(self, sensor: TireSensor) -> None:
+    def __init__(self, sensor: Sensor) -> None:
         self._low_pressure_threshold = 17
         self._high_pressure_threshold = 21
         self._sensor = sensor
