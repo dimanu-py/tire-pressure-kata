@@ -24,3 +24,11 @@ class TestAlarm:
             alarm.check_pressure()
 
             assert alarm.is_alarm_on
+
+    def test_alarm_is_off_when_pressure_is_between_thresholds(self):
+        alarm = Alarm()
+
+        with patch("tire_pressure.sensor.Sensor.pop_next_pressure_psi_value", return_value=18):
+            alarm.check_pressure()
+
+            assert not alarm.is_alarm_on
