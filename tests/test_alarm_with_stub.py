@@ -28,3 +28,12 @@ class TestAlarm:
         alarm.check_pressure()
 
         assert alarm.is_alarm_on
+
+    def test_alarm_is_off_when_pressure_is_normal(self):
+        stub_sensor = StubSensor()
+        stub_sensor.stub_call_to_pop_next_pressure_psi_value([18])
+        alarm = Alarm(sensor=stub_sensor)
+
+        alarm.check_pressure()
+
+        assert not alarm.is_alarm_on
