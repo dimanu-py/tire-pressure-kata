@@ -76,6 +76,12 @@ or
 poetry run pytest
 ```
 
+## Learnings
+
+1. The Open/Closed principle was not being followed. It would be difficult to add new types of alarms without modifying the Alarm class.
+2. It was difficult to test the Alarm class because it was tightly coupled to the Sensor class.
+3. We've learned how to use Stubs and Mocks to test a class without depending on other classes.
+
 ### Visit my GitHub profile to see all solved katas 🚀
 
 [![Web](https://img.shields.io/badge/GitHub-Dimanu.py-14a1f0?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/dimanu-py/code-katas)
